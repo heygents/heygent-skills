@@ -31,10 +31,15 @@ claude plugin update <plugin-name>@heygent
 ## Migrating from the old marketplace location
 
 Before September 2026 the marketplace manifest lived inside the `heygent-pm-skills` repo. If you added it
-from there, switch once (installed plugins stay installed; only their update source changes):
+from there, switch once. Removing a marketplace also removes the plugins installed from it, so reinstall
+them afterwards (your workspace files are untouched):
 
 ```bash
 claude plugin marketplace remove heygent && claude plugin marketplace add heygents/heygent-skills
+```
+
+```bash
+claude plugin install heygent-pm-skills@heygent && claude plugin install ayal-doron-methodology-skills@heygent
 ```
 
 ## Adding a plugin
